@@ -12,7 +12,8 @@
         style="@style/HomeButtons"
         android:text="Now Playing"
         android:background="#03A9F4"
-        android:layout_margin="4dp"/>
+        android:layout_margin="4dp"
+        android:id="@+id/now_playing"/>
 
 
     <LinearLayout
