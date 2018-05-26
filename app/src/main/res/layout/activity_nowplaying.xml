@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_above="@id/controls">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:gravity="center"
         android:text="Now Playing"
-        android:textSize="32sp" />
+        android:textSize="32sp"
+        android:textColor="@android:color/black"/>
 
     <ImageView
         android:layout_width="match_parent"
@@ -48,12 +54,18 @@
 
     </LinearLayout>
 
+
+</LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/controls">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -78,4 +90,4 @@
 
 
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

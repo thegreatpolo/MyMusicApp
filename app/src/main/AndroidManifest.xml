@@ -18,6 +18,9 @@
         </activity>
 
         <activity android:name=".NowPlayingActivity"> </activity>
+        <activity android:name=".ArtistActivity"></activity>
+        <activity android:name=".AllSongsActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
 
     </application>
 

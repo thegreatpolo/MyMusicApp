@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
         hideActionBar();
 
 
-
         TextView nowplaying = (TextView) findViewById(R.id.now_playing);
         nowplaying.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +24,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        TextView artist = (TextView) findViewById(R.id.artist);
+        artist.setOnClickListener(new View.OnClickListener(){
+            @Override
+           public void onClick(View view){
+                Intent artist=new Intent(MainActivity.this, ArtistActivity.class);
+                startActivity(artist);
+            }
+        });
+
+        TextView allsongs = (TextView) findViewById(R.id.all_songs);
+        allsongs.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent allsongs=new Intent(MainActivity.this, AllSongsActivity.class);
+                startActivity(allsongs);
+            }
+        });
+
+        TextView search = (TextView) findViewById(R.id.search);
+        search.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent search=new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(search);
+            }
+        });
     }
 
     public void hideActionBar() {  // Hides the action bar
