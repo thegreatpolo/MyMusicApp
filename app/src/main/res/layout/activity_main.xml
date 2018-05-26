@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.mymusicapp.MainActivity"
+    android:background="@android:color/black">
+
+    <TextView
+        style="@style/HomeButtons"
+        android:text="Now Playing"
+        android:background="#03A9F4"
+        android:layout_margin="4dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            style="@style/HomeButtons"
+            android:text="Artist"
+            android:background="#8BC34A"
+            android:layout_marginHorizontal="4dp"
+            />
+
+
+        <TextView
+            style="@style/HomeButtons"
+            android:text="All songs"
+            android:background="#FFC107"
+            android:layout_marginRight="4dp" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/HomeButtons"
+        android:text="Search"
+        android:background="#9C27B0"
+        android:layout_margin="4dp"/>
+
+</LinearLayout>
