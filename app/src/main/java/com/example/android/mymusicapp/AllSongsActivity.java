@@ -24,23 +24,29 @@ public class AllSongsActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
+        ArrayList<Songs> songs = new ArrayList<Songs>();
 
-    ArrayList<Songs> songs = new ArrayList<Songs>();
+        songs.add(new Songs("Artist 1", "Song 1"));
+        songs.add(new Songs("Artist 2", "Song 2"));
+        songs.add(new Songs("Artist 3", "Song 3"));
+        songs.add(new Songs("Artist 4", "Song 4"));
+        songs.add(new Songs("Artist 5", "Song 5"));
+        songs.add(new Songs("Artist 6", "Song 6"));
+        songs.add(new Songs("Artist 7", "Song 7"));
+        songs.add(new Songs("Artist 8", "Song 8"));
+        songs.add(new Songs("Artist 9", "Song 9"));
+        songs.add(new Songs("Artist 11", "Song 11"));
+        songs.add(new Songs("Artist 12", "Song 12"));
+        songs.add(new Songs("Artist 13", "Song 13"));
+        songs.add(new Songs("Artist 14", "Song 14"));
+        songs.add(new Songs("Artist 15", "Song 15"));
+        songs.add(new Songs("Artist 16", "Song 16"));
 
-    songs.add(new Songs("Artist 1","Song 1"));
-    songs.add(new Songs("Artist 2","Song 2"));
-        songs.add(new Songs("Artist 3","Song 3"));
-        songs.add(new Songs("Artist 4","Song 4"));
-        songs.add(new Songs("Artist 5","Song 5"));
-        songs.add(new Songs("Artist 6","Song 6"));
-        songs.add(new Songs("Artist 7","Song 7"));
-        songs.add(new Songs("Artist 8","Song 8"));
-        songs.add(new Songs("Artist 9","Song 9"));
-        songs.add(new Songs("Artist 10","Song 10"));
 
-        SongsAdapter itemsAdapter=new SongsAdapter(this,songs);
+
+        SongsAdapter itemsAdapter = new SongsAdapter(this, songs);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
 
-}
+    }
 }
