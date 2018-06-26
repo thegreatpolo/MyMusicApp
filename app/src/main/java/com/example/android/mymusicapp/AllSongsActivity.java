@@ -1,8 +1,12 @@
 package com.example.android.mymusicapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -43,10 +47,30 @@ public class AllSongsActivity extends AppCompatActivity {
         songs.add(new Songs("Artist 16", "Song 16"));
 
 
-
         SongsAdapter itemsAdapter = new SongsAdapter(this, songs);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
 
+
+        final ArrayList<Songs> songsBundle = songs;
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Songs song = songsBundle.get(i);
+                playSong(song);
+            }
+        });
     }
+
+        public void playSong(Songs song){
+            TextView artistName = (TextView) findViewById(R.id.artist_name);
+            TextView songName = (TextView) findViewById(R.id.song_name);
+            artistName.setText(song.getArtistName());
+            songName.setText(song.getSongName());
+            Intent nowplayingIntent = new Intent(AllSongsActivity.this, NowPlayingActivity.class);
+            startActivity(nowplayingIntent);
+        }
+
+
+
 }
