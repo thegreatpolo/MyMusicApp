@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -87,6 +88,26 @@ public class SearchActivity extends AppCompatActivity{
         SongsAdapter SongsAdapter = new SongsAdapter(this, items);
         ListView searchListView = (ListView) findViewById(R.id.list_search);
         searchListView.setAdapter(SongsAdapter);
+
+
+        final ArrayList<Songs> songsBundle = items;
+        searchListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Songs song = songsBundle.get(i);
+                playSong(song);
+            }
+        });
+
+
+    }
+
+
+    public void playSong(Songs song){
+        Intent nowplayingIntent = new Intent(SearchActivity.this, NowPlayingActivity.class);
+        nowplayingIntent.putExtra("artistName", String.valueOf(song.getArtistName()));
+        nowplayingIntent.putExtra("songName", String.valueOf(song.getSongName()));
+        startActivity(nowplayingIntent);
     }
 
 

@@ -24,14 +24,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView artist = (TextView) findViewById(R.id.artist);
-        artist.setOnClickListener(new View.OnClickListener(){
-            @Override
-           public void onClick(View view){
-                Intent artist=new Intent(MainActivity.this, ArtistActivity.class);
-                startActivity(artist);
-            }
-        });
 
         TextView allsongs = (TextView) findViewById(R.id.all_songs);
         allsongs.setOnClickListener(new View.OnClickListener(){
