@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         hideActionBar();
 
-
         TextView nowplaying = (TextView) findViewById(R.id.now_playing);
         nowplaying.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,21 +23,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         TextView allsongs = (TextView) findViewById(R.id.all_songs);
-        allsongs.setOnClickListener(new View.OnClickListener(){
+        allsongs.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                Intent allsongs=new Intent(MainActivity.this, AllSongsActivity.class);
+            public void onClick(View view) {
+                Intent allsongs = new Intent(MainActivity.this, AllSongsActivity.class);
                 startActivity(allsongs);
             }
         });
 
         TextView search = (TextView) findViewById(R.id.search);
-        search.setOnClickListener(new View.OnClickListener(){
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                Intent search=new Intent(MainActivity.this, SearchActivity.class);
+            public void onClick(View view) {
+                Intent search = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(search);
             }
         });

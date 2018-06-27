@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/artist_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="Artist Name"
-        android:textSize="18sp"
-        android:id="@+id/artist_name"/>
+        android:textSize="18sp" />
 
     <View
         android:layout_width="12dp"
@@ -21,12 +21,11 @@
         android:background="@android:color/black" />
 
     <TextView
+        android:id="@+id/song_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="Songs Name"
-        android:textSize="18sp"
-        android:id="@+id/song_name"/>
-
+        android:textSize="18sp" />
 
 </LinearLayout>

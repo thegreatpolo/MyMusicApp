@@ -17,20 +17,18 @@ import java.util.ArrayList;
 
 public class SongsAdapter extends ArrayAdapter<Songs> {
 
-    public SongsAdapter(Activity context, ArrayList<Songs> song){
+    public SongsAdapter(Activity context, ArrayList<Songs> song) {
         super(context, 0, song);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent) {
 
-        // To check if view is being reused
-        View listItemView=convertView;
-        if(listItemView ==null){
-            listItemView= LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+        View listItemView = convertView;
+        if (listItemView == null) {
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
 
-        // Get the {@link AndroidFlavor} object located at this position in the list
         Songs currentSong = getItem(position);
 
         TextView artistNameTextView = (TextView) listItemView.findViewById(R.id.artist_name);
@@ -40,6 +38,5 @@ public class SongsAdapter extends ArrayAdapter<Songs> {
         songNameTextView.setText(currentSong.getSongName());
 
         return listItemView;
-
     }
 }

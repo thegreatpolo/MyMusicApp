@@ -8,12 +8,16 @@ public class Songs {
     private String mArtistName;
     private String mSongName;
 
-    public Songs(String artistName, String songName){
-        mArtistName=artistName;
-        mSongName=songName;
+    public Songs(String artistName, String songName) {
+        mArtistName = artistName;
+        mSongName = songName;
     }
 
-    public String getArtistName(){return mArtistName;}
-    public String getSongName(){return mSongName;}
+    public String getArtistName() {
+        return mArtistName;
+    }
 
+    public String getSongName() {
+        return mSongName;
+    }
 }

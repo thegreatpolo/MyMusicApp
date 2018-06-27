@@ -1,74 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nowplayingactivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/nowplayingactivity">
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_above="@id/controls">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:gravity="center"
-        android:text="Now Playing"
-        android:textSize="32sp"
-        android:textColor="@android:color/black"/>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="251dp"
-        android:layout_margin="16dp"
-        android:src="@drawable/eggs" />
-
+    android:background="#03A9F4"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/controls"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/artist_name_nowplaying"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Artist Name"
-            android:textSize="18sp" />
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:text="Now Playing"
+            android:textColor="@android:color/black"
+            android:textSize="32sp" />
 
-        <View
-            android:layout_width="12dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:background="@android:color/black" />
-
-        <TextView
-            android:id="@+id/song_name_nowplaying"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Songs Name"
-            android:textSize="18sp" />
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/artist_name_nowplaying"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Artist Name"
+                android:textColor="#353535"
+                android:textSize="24sp" />
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/song_name_nowplaying"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Songs Name"
+                android:textColor="#353535"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-
-</LinearLayout>
-
-
     <LinearLayout
+        android:id="@+id/controls"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/controls">
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -91,6 +86,6 @@
             android:layout_weight="1"
             android:src="@drawable/ic_skip_next" />
 
-
     </LinearLayout>
+
 </RelativeLayout>

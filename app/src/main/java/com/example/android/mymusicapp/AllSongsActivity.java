@@ -23,13 +23,14 @@ public class AllSongsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_allsongs);
         hideActionBar();
+        displaySongs();
     }
-
 
     public void hideActionBar() {  // Hides the action bar
         getSupportActionBar().hide();
+    }
 
-
+    public void displaySongs() {
         ArrayList<Songs> songs = new ArrayList<Songs>();
 
         songs.add(new Songs("Artist 1", "Song 1"));
@@ -64,13 +65,10 @@ public class AllSongsActivity extends AppCompatActivity {
         });
     }
 
-        public void playSong(Songs song){
-            Intent nowplayingIntent = new Intent(AllSongsActivity.this, NowPlayingActivity.class);
-            nowplayingIntent.putExtra("artistName", String.valueOf(song.getArtistName()));
-            nowplayingIntent.putExtra("songName", String.valueOf(song.getSongName()));
-            startActivity(nowplayingIntent);
-        }
-
-
-
+    public void playSong(Songs song) {
+        Intent nowplayingIntent = new Intent(AllSongsActivity.this, NowPlayingActivity.class);
+        nowplayingIntent.putExtra("artistName", String.valueOf(song.getArtistName()));
+        nowplayingIntent.putExtra("songName", String.valueOf(song.getSongName()));
+        startActivity(nowplayingIntent);
+    }
 }

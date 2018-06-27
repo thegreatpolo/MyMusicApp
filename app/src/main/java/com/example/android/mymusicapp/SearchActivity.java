@@ -18,31 +18,18 @@ import java.util.ArrayList;
  * Created by paulcristofari on 26/05/2018.
  */
 
-public class SearchActivity extends AppCompatActivity{
+public class SearchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         hideActionBar();
-
-        /*
-        TextView searchButton = (TextView) findViewById(R.id.search_button);
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                search();
-            }
-        });
-*/
-
     }
-
 
     public void hideActionBar() {  // Hides the action bar
         getSupportActionBar().hide();
     }
-
 
     public void search(View view) {
         ArrayList<Songs> songs = new ArrayList<Songs>();
@@ -63,24 +50,23 @@ public class SearchActivity extends AppCompatActivity{
         songs.add(new Songs("Artist 15", "Song 15"));
         songs.add(new Songs("Artist 16", "Song 16"));
 
-
         EditText nameEditText = (EditText) findViewById(R.id.search);
         String search = nameEditText.getText().toString();
         Log.i("SearchActivity.java", search);
 
-
         ArrayList<Songs> items = new ArrayList<Songs>();
 
-        for(int i=0; i<songs.size(); i++){
-            Songs item= songs.get(i);
-            if(item.getArtistName().toLowerCase().contains(search.toLowerCase()) || item.getSongName().toLowerCase().contains(search.toLowerCase())){
+        for (int i = 0; i < songs.size(); i++) {
+            Songs item = songs.get(i);
+            if (item.getArtistName().toLowerCase().contains(search.toLowerCase()) || item.getSongName().toLowerCase().contains(search.toLowerCase())) {
                 items.add(songs.get(i));
             }
         }
-        if(items.isEmpty()){
+
+        if (items.isEmpty()) {
             Toast toast = Toast.makeText(SearchActivity.this, "No result for your search!",
                     Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.CENTER,0,-500);
+            toast.setGravity(Gravity.CENTER, 0, -500);
             toast.show();
 
         }
@@ -88,7 +74,6 @@ public class SearchActivity extends AppCompatActivity{
         SongsAdapter SongsAdapter = new SongsAdapter(this, items);
         ListView searchListView = (ListView) findViewById(R.id.list_search);
         searchListView.setAdapter(SongsAdapter);
-
 
         final ArrayList<Songs> songsBundle = items;
         searchListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -98,20 +83,12 @@ public class SearchActivity extends AppCompatActivity{
                 playSong(song);
             }
         });
-
-
     }
 
-
-    public void playSong(Songs song){
+    public void playSong(Songs song) {
         Intent nowplayingIntent = new Intent(SearchActivity.this, NowPlayingActivity.class);
         nowplayingIntent.putExtra("artistName", String.valueOf(song.getArtistName()));
         nowplayingIntent.putExtra("songName", String.valueOf(song.getSongName()));
         startActivity(nowplayingIntent);
     }
-
-
-
-
-
 }
