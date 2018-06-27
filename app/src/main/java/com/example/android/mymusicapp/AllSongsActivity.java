@@ -1,11 +1,13 @@
 package com.example.android.mymusicapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -63,11 +65,9 @@ public class AllSongsActivity extends AppCompatActivity {
     }
 
         public void playSong(Songs song){
-            TextView artistName = (TextView) findViewById(R.id.artist_name);
-            TextView songName = (TextView) findViewById(R.id.song_name);
-            artistName.setText(song.getArtistName());
-            songName.setText(song.getSongName());
             Intent nowplayingIntent = new Intent(AllSongsActivity.this, NowPlayingActivity.class);
+            nowplayingIntent.putExtra("artistName", String.valueOf(song.getArtistName()));
+            nowplayingIntent.putExtra("songName", String.valueOf(song.getSongName()));
             startActivity(nowplayingIntent);
         }
 
