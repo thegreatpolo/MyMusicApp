@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
+
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".SearchActivity">
+    tools:context=".SearchActivity"
+    android:layout_weight="1"
+    android:background="@color/search"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        android:id="@+id/search_bar"
+        android:layout_margin="16dp">
 
         <EditText
             android:id="@+id/search"
@@ -28,7 +33,6 @@
             android:layout_width="64dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="64dp"
-            android:onClick="search"
             android:text="GO" />
 
     </LinearLayout>
@@ -37,15 +41,42 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layout_below="@id/search_bar"
+        android:layout_above="@id/buttons">
 
         <ListView
             android:id="@+id/list_search"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
         </ListView>
 
     </LinearLayout>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/buttons"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/now_playing"
+            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:id="@+id/now_playing_button"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/all_songs"
+            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:id="@+id/all_songs_button"/>
+    </LinearLayout>
+
+</RelativeLayout>

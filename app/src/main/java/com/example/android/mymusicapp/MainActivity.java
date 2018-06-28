@@ -12,13 +12,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        hideActionBar();
 
         TextView nowplaying = (TextView) findViewById(R.id.now_playing);
         nowplaying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent nowplayingIntent = new Intent(MainActivity.this, NowPlayingActivity.class);
+                nowplayingIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(nowplayingIntent);
             }
         });
@@ -42,7 +42,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void hideActionBar() {  // Hides the action bar
-        getSupportActionBar().hide();
-    }
+
 }

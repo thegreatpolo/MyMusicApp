@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,11 +25,34 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        hideActionBar();
-    }
 
-    public void hideActionBar() {  // Hides the action bar
-        getSupportActionBar().hide();
+        Button nowPlaying = (Button) findViewById(R.id.now_playing_button);
+        nowPlaying.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent nowPlaying = new Intent(SearchActivity.this, NowPlayingActivity.class);
+                nowPlaying.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(nowPlaying);
+            }
+        });
+
+        final Button allSongs = (Button) findViewById(R.id.all_songs_button);
+        allSongs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent allSongs = new Intent(SearchActivity.this, AllSongsActivity.class);
+                startActivity(allSongs);
+            }
+        });
+
+        Button searchButton = (Button) findViewById(R.id.search_button);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                search(view);
+            }
+        });
+
     }
 
     public void search(View view) {

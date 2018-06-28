@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -22,12 +23,26 @@ public class AllSongsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_allsongs);
-        hideActionBar();
         displaySongs();
-    }
 
-    public void hideActionBar() {  // Hides the action bar
-        getSupportActionBar().hide();
+        Button search = (Button) findViewById(R.id.search_activity_button);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent search = new Intent(AllSongsActivity.this, SearchActivity.class);
+                startActivity(search);
+            }
+        });
+
+        final Button nowPlaying = (Button) findViewById(R.id.now_playing_button);
+        nowPlaying.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent nowPlaying = new Intent(AllSongsActivity.this, NowPlayingActivity.class);
+                nowPlaying.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(nowPlaying);
+            }
+        });
     }
 
     public void displaySongs() {
