@@ -6,4 +6,5 @@
     <string name="all_songs_activity">All Songs</string>
     <string name="now_playing_activity">Now Playing</string>
     <string name="search_activity">Search</string>
+    <string name="main_menu">Main Menu</string>
 </resources>

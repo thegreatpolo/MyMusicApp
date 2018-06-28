@@ -36,7 +36,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        final Button allSongs = (Button) findViewById(R.id.all_songs_button);
+        Button allSongs = (Button) findViewById(R.id.all_songs_button);
         allSongs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +53,14 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        Button mainMenu = (Button) findViewById(R.id.main_menu_button);
+        mainMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainMenu = new Intent(SearchActivity.this, MainActivity.class);
+                startActivity(mainMenu);
+            }
+        });
     }
 
     public void search(View view) {
@@ -92,7 +100,6 @@ public class SearchActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, -500);
             toast.show();
-
         }
 
         SongsAdapter SongsAdapter = new SongsAdapter(this, items);

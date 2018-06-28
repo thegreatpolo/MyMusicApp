@@ -18,7 +18,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nowplaying);
 
-        String artist="artist";
+        String artist = "artist";
         String song = "song";
 
         Intent intent = getIntent();
@@ -52,8 +52,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         });
     }
 
-
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
@@ -66,8 +65,6 @@ public class NowPlayingActivity extends AppCompatActivity {
             songName.setText(song);
         }
 
-
-
         Button search = (Button) findViewById(R.id.search_activity_button);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,12 +74,21 @@ public class NowPlayingActivity extends AppCompatActivity {
             }
         });
 
-        final Button allSongs = (Button) findViewById(R.id.all_songs_button);
+        Button allSongs = (Button) findViewById(R.id.all_songs_button);
         allSongs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent allSongs = new Intent(NowPlayingActivity.this, AllSongsActivity.class);
                 startActivity(allSongs);
+            }
+        });
+
+        Button mainMenu = (Button) findViewById(R.id.main_menu_button);
+        mainMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainMenu = new Intent(NowPlayingActivity.this, MainActivity.class);
+                startActivity(mainMenu);
             }
         });
     }

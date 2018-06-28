@@ -18,14 +18,14 @@
         android:id="@+id/buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/main_menu_button"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/now_playing_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_weight="1"
             android:text="@string/now_playing" />
 
@@ -33,9 +33,18 @@
             android:id="@+id/search_activity_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_weight="1"
             android:text="@string/search" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/main_menu_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:text="@string/main_menu" />
 
 </RelativeLayout>

@@ -4,19 +4,18 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
 
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context=".SearchActivity"
     android:layout_weight="1"
     android:background="@color/search"
-    >
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".SearchActivity">
 
     <LinearLayout
+        android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/search_bar"
-        android:layout_margin="16dp">
+        android:layout_margin="16dp"
+        android:gravity="center">
 
         <EditText
             android:id="@+id/search"
@@ -39,44 +38,58 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:padding="16dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttons"
         android:layout_below="@id/search_bar"
-        android:layout_above="@id/buttons">
+        android:gravity="center"
+        android:padding="16dp">
 
         <ListView
             android:id="@+id/list_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </ListView>
+            android:orientation="vertical"></ListView>
 
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:id="@+id/buttons"
-        android:layout_weight="1">
+        android:orientation="vertical">
 
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/now_playing"
-            android:layout_weight="1"
-            android:layout_margin="16dp"
-            android:id="@+id/now_playing_button"/>
+            android:layout_above="@id/main_menu_button"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/now_playing_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_weight="1"
+                android:text="@string/now_playing" />
+
+            <Button
+                android:id="@+id/all_songs_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_weight="1"
+                android:text="@string/all_songs" />
+        </LinearLayout>
 
         <Button
+            android:id="@+id/main_menu_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/all_songs"
-            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
             android:layout_margin="16dp"
-            android:id="@+id/all_songs_button"/>
+            android:text="@string/main_menu" />
+
     </LinearLayout>
 
 </RelativeLayout>

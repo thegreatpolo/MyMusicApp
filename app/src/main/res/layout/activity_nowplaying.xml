@@ -89,26 +89,35 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/buttons">
+        android:layout_above="@id/main_menu_button"
+        android:orientation="horizontal">
 
         <Button
+            android:id="@+id/all_songs_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/all_songs"
+            android:layout_marginHorizontal="16dp"
             android:layout_weight="1"
-            android:layout_margin="16dp"
-            android:id="@+id/all_songs_button"/>
+            android:text="@string/all_songs" />
 
         <Button
+            android:id="@+id/search_activity_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/search"
+            android:layout_marginHorizontal="16dp"
             android:layout_weight="1"
-            android:layout_margin="16dp"
-            android:id="@+id/search_activity_button"/>
+            android:text="@string/search" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/main_menu_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:text="@string/main_menu" />
 </RelativeLayout>

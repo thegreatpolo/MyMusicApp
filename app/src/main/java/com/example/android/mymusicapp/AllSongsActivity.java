@@ -34,13 +34,22 @@ public class AllSongsActivity extends AppCompatActivity {
             }
         });
 
-        final Button nowPlaying = (Button) findViewById(R.id.now_playing_button);
+        Button nowPlaying = (Button) findViewById(R.id.now_playing_button);
         nowPlaying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent nowPlaying = new Intent(AllSongsActivity.this, NowPlayingActivity.class);
                 nowPlaying.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(nowPlaying);
+            }
+        });
+
+        Button mainMenu = (Button) findViewById(R.id.main_menu_button);
+        mainMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainMenu = new Intent(AllSongsActivity.this, MainActivity.class);
+                startActivity(mainMenu);
             }
         });
     }
@@ -63,7 +72,6 @@ public class AllSongsActivity extends AppCompatActivity {
         songs.add(new Songs("Artist 14", "Song 14"));
         songs.add(new Songs("Artist 15", "Song 15"));
         songs.add(new Songs("Artist 16", "Song 16"));
-
 
         SongsAdapter itemsAdapter = new SongsAdapter(this, songs);
         ListView listView = (ListView) findViewById(R.id.list);
